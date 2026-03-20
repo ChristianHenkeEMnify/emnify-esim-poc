@@ -33,45 +33,14 @@
             margin-top: 4px;
         }
 
-        .step {
+        .card {
             background: #fff;
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 16px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
 
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
-
-        .step-number {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #007aff;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .step-number.done {
-            background: #34c759;
-        }
-
-        .step-title {
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        .step-body {
+        .card p {
             font-size: 14px;
             color: #6d6d72;
             line-height: 1.5;
@@ -87,22 +56,11 @@
             font-weight: 600;
             text-align: center;
             text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.15s;
-        }
-
-        .btn:active { opacity: 0.75; }
-
-        .btn-primary {
             background: #007aff;
             color: #fff;
         }
 
-        .btn-secondary {
-            background: #f2f2f7;
-            color: #007aff;
-        }
+        .btn:active { opacity: 0.75; }
 
         .note {
             font-size: 12px;
@@ -110,113 +68,25 @@
             margin-top: 12px;
             line-height: 1.4;
         }
-
-        .qr-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 8px 0 4px;
-        }
-
-        #qrcode {
-            margin: 0 auto 16px;
-        }
-
-        #qrcode canvas, #qrcode img {
-            border-radius: 8px;
-        }
-
-        .lpa-string {
-            font-size: 10px;
-            color: #8e8e93;
-            word-break: break-all;
-            text-align: center;
-            font-family: monospace;
-            background: #f2f2f7;
-            padding: 8px 10px;
-            border-radius: 8px;
-            width: 100%;
-        }
-
-        .step-2-hint {
-            font-size: 13px;
-            color: #6d6d72;
-            text-align: center;
-            margin-top: 14px;
-            line-height: 1.5;
-        }
-
-        .divider {
-            height: 1px;
-            background: #e5e5ea;
-            margin: 16px 0;
-        }
     </style>
 </head>
 <body>
 
     <div class="logo">
         <h1>EMnify eSIM Setup</h1>
-        <p>Follow the two steps below to activate your SIM</p>
+        <p>Install the APN settings for your EMnify eSIM</p>
     </div>
 
-    <!-- STEP 1 -->
-    <div class="step">
-        <div class="step-header">
-            <div class="step-number" id="step1-number">1</div>
-            <div class="step-title">Install APN Settings</div>
-        </div>
-        <p class="step-body">
+    <div class="card">
+        <p>
             This installs the network configuration so your device connects to the EMnify network correctly.
         </p>
-        <a href="./emnify.mobileconfig" class="btn btn-primary" id="apn-btn">
-            Install APN Settings
-        </a>
+        <a href="./emnify.mobileconfig" class="btn">Install APN Settings</a>
         <p class="note">
             After tapping, iOS will show a "Profile Downloaded" notification.
             Go to <strong>Settings → General → VPN &amp; Device Management</strong> and tap <strong>Install</strong>.
-            Then return here for Step 2.
         </p>
     </div>
-
-    <!-- STEP 2 -->
-    <div class="step">
-        <div class="step-header">
-            <div class="step-number">2</div>
-            <div class="step-title">Install eSIM</div>
-        </div>
-        <p class="step-body">
-            Open your <strong>Camera app</strong> and point it at the QR code below to install your eSIM profile.
-        </p>
-        <div class="qr-container">
-            <div id="qrcode"></div>
-            <div class="lpa-string" id="lpa-text"></div>
-        </div>
-        <div class="divider"></div>
-        <p class="step-2-hint">
-            After scanning, follow the on-screen prompts to add the cellular plan.
-        </p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-    <script>
-        const ACTIVATION_CODE = "LPA:1$RSP-3128.IDEMIA.IO$ROE61-VX6WB-WHWSC-1VQS7";
-
-        document.getElementById("lpa-text").textContent = ACTIVATION_CODE;
-
-        QRCode.toCanvas(document.createElement("canvas"), ACTIVATION_CODE, {
-            errorCorrectionLevel: "M",
-            margin: 2,
-            width: 220,
-            color: { dark: "#000000", light: "#ffffff" }
-        }, function(err, canvas) {
-            if (err) {
-                document.getElementById("qrcode").textContent = "QR code could not be generated. Use the code below.";
-                return;
-            }
-            document.getElementById("qrcode").appendChild(canvas);
-        });
-    </script>
 
 </body>
 </html>
