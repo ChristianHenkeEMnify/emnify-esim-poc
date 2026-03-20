@@ -20,16 +20,6 @@
                 <dict>
                     <key>Name</key>
                     <string>em</string>
-                    <key>AuthenticationType</key>
-                    <string>NONE</string>
-                    <key>IsEnabled</key>
-                    <true/>
-                    <key>DefaultProtocolMask</key>
-                    <integer>3</integer>
-                    <key>EnabledProtocolMask</key>
-                    <integer>3</integer>
-                    <key>AllowedProtocolMask</key>
-                    <integer>3</integer>
                 </dict>
             </array>
         </dict>
