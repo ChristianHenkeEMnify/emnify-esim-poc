@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.cellular</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.emnify.cellular.apn</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+            <key>PayloadDisplayName</key>
+            <string>EMnify APN</string>
+            <key>APNs</key>
+            <array>
+                <dict>
+                    <key>Name</key>
+                    <string>em</string>
+                    <key>AuthenticationType</key>
+                    <string>NONE</string>
+                    <key>IsEnabled</key>
+                    <true/>
+                    <key>DefaultProtocolMask</key>
+                    <integer>3</integer>
+                    <key>EnabledProtocolMask</key>
+                    <integer>3</integer>
+                    <key>AllowedProtocolMask</key>
+                    <integer>3</integer>
+                </dict>
+            </array>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>EMnify APN Configuration</string>
+    <key>PayloadDescription</key>
+    <string>Configures the APN for your EMnify eSIM</string>
+    <key>PayloadIdentifier</key>
+    <string>com.emnify.apn-config</string>
+    <key>PayloadOrganization</key>
+    <string>EMnify GmbH</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadUUID</key>
+    <string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+</dict>
+</plist>
